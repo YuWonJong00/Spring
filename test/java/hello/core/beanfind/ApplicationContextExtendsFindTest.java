@@ -19,6 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ApplicationContextExtendsFindTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
 
+
+    @Test
+    void findBeanbynamem(){
+        FixDiscountPolicy f=ac.getBean("fixdiscountPolicy",FixDiscountPolicy.class);
+        assertThat(f).isInstanceOf(DiscountPolicy.class);
+    }
     @Test
     @DisplayName("부모 타입으로 조회시 자식이 둘 이상있으면 중복 오류가 발생")
     void findBeanByParentTypeDuplicate(){
