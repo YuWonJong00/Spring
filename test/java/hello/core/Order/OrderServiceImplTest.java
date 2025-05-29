@@ -18,6 +18,8 @@ class OrderServiceImplTest {
     OrderServiceImpl orderService = new OrderServiceImpl(discountPolicy, memberRepository);
     orderService.createOrder(1L, "itemA", 10000);
 
+//final과 생성자 주입을 사용하면 순수 자바 코드로 테스트를 작성할 때 의존관계를 누락하지 않도록 안정성을 보장해준다
+
 
 }
 }
