@@ -30,14 +30,14 @@ public class NetworkClient   {
         }
 
 
-    @PostConstruct
+
     public void init() throws Exception {
         System.out.println("NetworkClient.init");
         connect();
         call("초기화 연결 메시지");
     }
 
-    @PreDestroy
+@PreDestroy
     public void close() throws Exception {
         System.out.println("NetworkClient.close");
         disconnect();
